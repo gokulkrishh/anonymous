@@ -12,6 +12,7 @@ import {
   StyleSheet,
   ScrollView,
   Text,
+  ToolbarAndroid,
   View
 } from 'react-native';
 
@@ -19,7 +20,7 @@ var Dimensions = require('Dimensions');
 var {width, height} = Dimensions.get('window');
 
 import Spinner from 'react-native-loading-spinner-overlay';
-import NavBar, { NavButton, NavButtonText, NavTitle } from 'react-native-nav';
+import NavBar, { NavButton, NavButtonText, NavTitle, NavigationBar } from 'react-native-nav';
 import Button from 'react-native-button';
 
 class anonymous extends Component {
@@ -42,22 +43,57 @@ class anonymous extends Component {
     const {visible} = this.state;
     return (
       <View style={styles.container}>
-         <StatusBar style={styles.statusBar} />
-        <Spinner visible={visible} color="#fff" overlayColor="rgb(0,150,136)"/>
-
-        <NavBar style={styles}>
-          <NavTitle style={styles.title}>Anonymous</NavTitle>
-        </NavBar>
-
-        <View style={{flex: 1, padding: 20}}>
-          <ScrollView>
+        <View>
+          <Spinner visible={visible} color="#fff" overlayColor="rgb(0,150,136)"/>
+          <StatusBar style={styles.statusBar} />
+          <ToolbarAndroid
+          actions={[]}
+          style={styles.toolbar}
+          titleColor="white"
+          title="Anonymous" />
+        </View>
+        <View style={{flex: 1}}>
+          <ScrollView style={styles.scrollView}>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
+            <Text>main</Text>
             <Text>main</Text>
           </ScrollView>
-        </View>
-
-        <View>
           <TextInput autoFocus={true} multiline={true} style={styles.textInput} placeholder={'Type a message...'}/>
-          <Button style={{fontSize: 20, color: 'green'}} styleDisabled={{color: 'red'}}>Send</Button>
         </View>
       </View>
     );
@@ -67,16 +103,12 @@ class anonymous extends Component {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F5FCFF',
-    width: width,
-    height: height,
   },
 
-  statusBar: {
+  toolbar: {
     backgroundColor: '#00695c',
-  },
-
-  navBar: {
-    backgroundColor: '#00695c',
+    height: 60,
+    paddingLeft: 20
   },
 
   spinner: {
@@ -101,6 +133,10 @@ const styles = StyleSheet.create({
     lineHeight: 2,
     padding: 10,
     backgroundColor: '#ddd'
+  },
+  scrollView: {
+    backgroundColor: '#f2f2f2',
+    height: height - 150,
   },
 });
 
